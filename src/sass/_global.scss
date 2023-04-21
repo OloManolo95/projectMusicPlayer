@@ -1,0 +1,16 @@
+// GLOBALS
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: $color-background;
+}
+
+.button {
+    color: $color-button;
+}
