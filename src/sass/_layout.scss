@@ -1,4 +1,62 @@
 
-.container {
-  padding: 50px 0;
+.hero {
+  height: 850px;
+  color: $color-main;
+  font-weight: $weight-black;
+  background-image: url("https://i.postimg.cc/zD0RPPPG/background-1.png");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  .hero-title {
+    filter: drop-shadow(0 0 71px rgba(0,0,0,0.39));
+    margin: 230px 0 50px 90px;
+  }
+
+  .hero-subtitle {
+    margin-right: 30px;
+  }
+
+  span.hello {
+    display: block;
+    padding-bottom: 5px;
+    font-size: 25px;
+    letter-spacing: 5px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: calc(100%/3);
+    position: absolute;
+    bottom: 0px;
+
+    li {
+      display: inline;
+    }
+
+    a {
+      display: block;
+      color: $color-secondary;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      line-height: 27px;
+      text-transform: uppercase;
+      font-weight: $weight-semibold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a:hover {
+      color: $color-main;
+    }
+
+    .active {
+      color: $color-main;
+    }
+
+  }
 }
