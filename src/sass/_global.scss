@@ -23,6 +23,15 @@ body {
 }
 
 
-.button {
-  color: $color-button;
+.button-subscribe {
+  color: $color-main;
+  background-color: $color-button;
+  font-weight: $weight-bold;
+  font-size: 2rem;
+  width: 15rem;
+  height: 6rem;
+  letter-spacing: 0.3rem;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
 }
