@@ -155,3 +155,29 @@
     }
   }
 }
+
+// SEARCH
+
+.page-title {
+  text-align: center;
+}
+
+// DISCOVER
+
+.page-text {
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+  color: $color-main;
+  font-weight: $weight-semibold;
+  text-align: center;
+}
+
+// FOOTER
+
+footer > p {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: $color-main;
+  font-weight: $weight-regular;
+  text-align: center;
+}

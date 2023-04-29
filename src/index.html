@@ -65,10 +65,23 @@
         </script>
 
         <!--SEARCH-->
-        <script id="template-search-widget" type="text/x-handlebars-template"></script>
-            <footer class="footer">
-                All rights reserved
-            </footer>
+        <script id="template-search-widget" type="text/x-handlebars-template">
+            <h4 class="page-title">search</h4>
+            <div class="searchbar"></div>
+            <div class="page-prompt"></div>
+            <div class="songs container"></div>
+        </script>
+
+        <!--DISCOVER-->
+        <script id="template-discover-widget" type="text/x-handlebars-template">
+            <h4 class="page-title">discover</h4>
+            <div class="page-text">Give it a try!</div>
+            <div class="songs container"></div>
+        </script>
+
+        <footer class="footer">
+            <p>All rights reserved</p>
+        </footer>
         <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
         <script src="js/script.js" type="module"></script>
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>

@@ -26,3 +26,11 @@ h3 {
   text-transform: uppercase;
   font-weight: $weight-semibold;
 }
+
+h4 {
+  color: $color-secondary;
+  font-size: 3rem;
+  letter-spacing: 12px;
+  font-weight: $weight-semibold;
+  text-transform: uppercase;
+}
