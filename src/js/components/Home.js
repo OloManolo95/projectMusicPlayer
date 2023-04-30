@@ -5,6 +5,7 @@ class Home {
     const thisHome = this;
 
     thisHome.data = data;
+    thisHome.render(element);
   }
 
   render(wrapper) {

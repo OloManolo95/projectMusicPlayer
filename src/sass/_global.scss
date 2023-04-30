@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+#pages {
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   background-color: $color-background;
