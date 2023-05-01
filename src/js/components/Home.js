@@ -1,4 +1,5 @@
-import { templates } from '../settings.js';
+import { templates, select } from '../settings.js';
+//import AudioPlayer from './AudioPlayer.js';
 
 class Home {
   constructor(element,data) {
@@ -6,6 +7,7 @@ class Home {
 
     thisHome.data = data;
     thisHome.render(element);
+    //thisHome.initWidgets();
   }
 
   render(wrapper) {
@@ -17,7 +19,10 @@ class Home {
 
     const generatedHTML = templates.homeWidget();
     thisHome.dom.wrapper.innerHTML = generatedHTML;
+
   }
+
+
 }
 
 export default Home;

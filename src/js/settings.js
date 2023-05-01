@@ -5,6 +5,7 @@ export const select = {
     homeWidget: '#template-home-widget',
     searchWidget: '#template-search-widget',
     discoverWidget: '#template-discover-widget',
+    songWidget: '#template-song-widget',
   },
   containerOf: {
     pages: '#pages',
@@ -14,6 +15,10 @@ export const select = {
   },
   nav: {
     links: '.navbar-link',
+  },
+  home: {
+    player: '.page-home .audio-player',
+    songsList: '.songs',
   }
 };
 
@@ -28,6 +33,7 @@ export const templates = {
   homeWidget: Handlebars.compile(document.querySelector(select.templateOf.homeWidget).innerHTML),
   searchWidget: Handlebars.compile(document.querySelector(select.templateOf.searchWidget).innerHTML),
   discoverWidget: Handlebars.compile(document.querySelector(select.templateOf.discoverWidget).innerHTML),
+  songWidget: Handlebars.compile(document.querySelector(select.templateOf.songWidget).innerHTML),
 };
 
 export const classNames = {

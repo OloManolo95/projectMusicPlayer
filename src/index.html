@@ -79,6 +79,23 @@
             <div class="songs container"></div>
         </script>
 
+        <!--SONG-->
+        <script id="template-song-widget" type="text/x-handlebars-template">
+
+            <h3 class="song-title">
+                <a href="#" data-author="{{ authors.id }}" class="song-title-author">
+                    {{ authors.name }}
+                </a>
+                <a href="#" data-title="{{ title }}" class="song-title-title">
+                    {{ title }}
+                </a>
+            </h3>
+            <div class="audio-player">
+                <audio>
+                    <source src="" type=""></source>
+                </audio>
+            </div>
+        </script>
         <footer class="footer">
             <p>All rights reserved</p>
         </footer>
