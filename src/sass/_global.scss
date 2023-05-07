@@ -33,15 +33,85 @@ body {
 }
 
 
-.button-subscribe {
+.button {
   color: $color-main;
   background-color: $color-button;
   font-weight: $weight-bold;
-  font-size: 2rem;
-  width: 15rem;
-  height: 6rem;
-  letter-spacing: 0.3rem;
-  border-radius: 0.3rem;
   border: none;
   cursor: pointer;
+  letter-spacing: 0.3rem;
+  border-radius: 0.3rem;
+
+  &-subscribe {
+    font-size: 2rem;
+    width: 15rem;
+    height: 6rem;
+  }
+
+  &-search {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-weight: $weight-semibold;
+    text-transform: uppercase;
+    height: 46px;
+    width: 102px;
+  }
+}
+
+button, input {
+  line-height: 0;
+}
+
+// AUDIOPLAYER
+
+.song-title {
+  a {
+    color: $color-main;
+    text-decoration: none;
+  }
+
+  p {
+    display: inline;
+  }
+}
+
+
+.audio-additionals {
+  width: 400px;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.audio-additionals-categories {
+  font-size: 1rem;
+  font-weight: $weight-regular;
+  color: $color-secondary;
+  text-decoration: none;
+
+  a {
+    font-size: 1rem;
+    font-weight: $weight-regular;
+    color: $color-secondary;
+    text-decoration: none;
+  }
+}
+
+.audio-additionals-ranking {
+
+  font-size: 1rem;
+  font-weight: $weight-regular;
+  color: $color-secondary;
+  text-decoration: none;
+
+  a {
+    font-size: 1rem;
+    font-weight: $weight-regular;
+    color: $color-secondary;
+    text-decoration: none;
+  }
+}
+
+.green-audio-player .slider .gap-progress .pin {
+  background-color: $color-button;
 }

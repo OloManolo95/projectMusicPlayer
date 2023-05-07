@@ -1,13 +1,16 @@
 import { templates } from '../settings.js';
 
 class AudioPlayer {
-  constructor(song, authors, wrapper) {
+  constructor(song, author, wrapper) {
     const thisAudioPlayer = this;
 
     thisAudioPlayer.song = song;
-    thisAudioPlayer.authors = authors;
+    thisAudioPlayer.author = author;
+    //console.log(thisAudioPlayer.song.author);
+
 
     thisAudioPlayer.render(wrapper);
+    //thisAudioPlayer.getAuthor();
   }
 
   render(wrapper) {
@@ -17,9 +20,10 @@ class AudioPlayer {
 
     thisAudioPlayer.dom.wrapper = wrapper;
 
-    const generatedHTML = templates.audioPlayerWidget();
-    thisAudioPlayer.dom.wrapper.innerHTML = generatedHTML;
+    const generatedHTML = templates.audioPlayerWidget(thisAudioPlayer.song);
+    thisAudioPlayer.dom.wrapper.insertAdjacentHTML('beforeend', generatedHTML);
   }
+
 }
 
 export default AudioPlayer;

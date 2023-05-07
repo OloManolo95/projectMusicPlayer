@@ -1,5 +1,5 @@
-import { templates, select } from '../settings.js';
-//import AudioPlayer from './AudioPlayer.js';
+import { templates, select} from '../settings.js';
+import AudioPlayer from './AudioPlayer.js';
 
 class Home {
   constructor(element,data) {
@@ -7,7 +7,7 @@ class Home {
 
     thisHome.data = data;
     thisHome.render(element);
-    //thisHome.initWidgets();
+    thisHome.initWidgets();
   }
 
   render(wrapper) {
@@ -20,7 +20,25 @@ class Home {
     const generatedHTML = templates.homeWidget();
     thisHome.dom.wrapper.innerHTML = generatedHTML;
 
+    thisHome.dom.songsList = thisHome.dom.wrapper.querySelector(select.home.songsList);
+
   }
+
+  initWidgets() {
+    const thisHome = this;
+    console.log(thisHome.data);
+    for (let song of thisHome.data.songs) {
+      //console.log(song);
+      new AudioPlayer(song, thisHome.data, thisHome.dom.songsList);
+    }
+
+    // eslint-disable-next-line
+    GreenAudioPlayer.init({
+      selector: select.home.player,
+      stopOthersOnPlay: true,
+    });
+  }
+
 
 
 }

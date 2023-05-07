@@ -79,7 +79,8 @@
 
   .artist-image {
     background-image: url('https://i.postimg.cc/FHW1d3Tm/artist.jpg');
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 2;
@@ -160,6 +161,28 @@
 
 .page-title {
   text-align: center;
+}
+
+.searchbar-title {
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+  color: $color-secondary;
+  font-weight: $weight-semibold;
+}
+
+.searchbar-input {
+  height: 46px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 15px;
+}
+
+.page-prompt {
+  font-size: 1.5rem;
+  letter-spacing: 6px;
+  color: $color-main;
+  font-weight: $weight-semibold;
+  margin-top: 100px;
 }
 
 // DISCOVER

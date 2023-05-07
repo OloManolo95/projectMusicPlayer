@@ -15,7 +15,11 @@ const app = {
       })
       .then((parsedResponse) => {
         thisApp.data = parsedResponse;
-        console.log(thisApp.data);
+        //console.log(thisApp.data);
+        thisApp.initPages();
+        thisApp.initHome();
+        thisApp.initSearch();
+        thisApp.initDiscover();
       });
   },
 
@@ -26,13 +30,15 @@ const app = {
 
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
+
     const idFromHash = window.location.hash.replace('#/', '');
-    console.log(idFromHash);
+    //console.log(idFromHash);
 
     let pageMatchingHash = thisApp.pages[0].id;
-
+    console.log(thisApp.pages);
     for(let page of thisApp.pages) {
       if(page.id == idFromHash){
+        console.log(page.id);
         pageMatchingHash = page.id;
         break;
       }
@@ -47,7 +53,7 @@ const app = {
 
         /* get page id from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
-
+        console.log(id);
         /* run thisApp.activatePage with that id */
         thisApp.activatePage(id);
 
@@ -93,10 +99,6 @@ const app = {
   init: function() {
     const thisApp = this;
     thisApp.initData();
-    thisApp.initPages();
-    thisApp.initHome();
-    thisApp.initSearch();
-    thisApp.initDiscover();
   },
 };
 

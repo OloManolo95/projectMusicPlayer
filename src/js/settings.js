@@ -5,20 +5,36 @@ export const select = {
     homeWidget: '#template-home-widget',
     searchWidget: '#template-search-widget',
     discoverWidget: '#template-discover-widget',
-    songWidget: '#template-song-widget',
+    audioPlayerWidget: '#template-song-widget',
   },
   containerOf: {
     pages: '#pages',
     home: '.page-home',
     search: '.page-search',
-    discover: '.page-discover'
+    discover: '.page-discover',
+    joinNow: '.page-join-now',
   },
   nav: {
     links: '.navbar-link',
+    discover: '#discover',
   },
   home: {
     player: '.page-home .audio-player',
     songsList: '.songs',
+    subscribeButton: '.button-subscribe',
+  },
+  search: {
+    songsList: '.songs',
+    player: '.page-search .audio-player',
+    result: '.page-prompt',
+  },
+  searchbar: {
+    input: 'input[type="text"]',
+    button: '.button',
+  },
+  discover: {
+    song: '.songs',
+    player: '.page-discover .audio-player'
   }
 };
 
@@ -33,7 +49,7 @@ export const templates = {
   homeWidget: Handlebars.compile(document.querySelector(select.templateOf.homeWidget).innerHTML),
   searchWidget: Handlebars.compile(document.querySelector(select.templateOf.searchWidget).innerHTML),
   discoverWidget: Handlebars.compile(document.querySelector(select.templateOf.discoverWidget).innerHTML),
-  songWidget: Handlebars.compile(document.querySelector(select.templateOf.songWidget).innerHTML),
+  audioPlayerWidget: Handlebars.compile(document.querySelector(select.templateOf.audioPlayerWidget).innerHTML),
 };
 
 export const classNames = {
