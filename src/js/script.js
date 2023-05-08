@@ -2,6 +2,7 @@ import { settings, select, classNames } from './settings.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
 import Discover from './components/Discover.js';
+import JoinNow from './components/JoinNow.js';
 
 const app = {
   initData: function() {
@@ -29,7 +30,6 @@ const app = {
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
 
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
-
 
     const idFromHash = window.location.hash.replace('#/', '');
     //console.log(idFromHash);
@@ -65,6 +65,7 @@ const app = {
 
   activatePage: function(pageId){
     const thisApp = this;
+    console.log(thisApp.pages);
     //add class "active" to matching pages, remove from non-matching
     for(let page of thisApp.pages){
       page.classList.toggle(classNames.pages.active, page.id == pageId);
@@ -75,7 +76,6 @@ const app = {
         classNames.nav.active,
         link.getAttribute('href') == '#' + pageId);
     }
-
   },
 
   initHome: function(){
@@ -94,6 +94,12 @@ const app = {
     const thisApp = this;
     const discoverContainer = document.querySelector(select.containerOf.discover);
     thisApp.discover = new Discover(discoverContainer, thisApp.data);
+  },
+
+  initJoinNow: function(){
+    const thisApp = this;
+    const joinNowContainer = document.querySelector(select.containerOf.joinNow);
+    thisApp.joinNow = new JoinNow(joinNowContainer);
   },
 
   init: function() {

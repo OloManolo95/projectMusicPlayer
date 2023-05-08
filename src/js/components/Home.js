@@ -21,6 +21,7 @@ class Home {
     thisHome.dom.wrapper.innerHTML = generatedHTML;
 
     thisHome.dom.songsList = thisHome.dom.wrapper.querySelector(select.home.songsList);
+    thisHome.dom.button = thisHome.dom.wrapper.querySelector(select.home.subscribeButton);
 
   }
 
@@ -38,8 +39,6 @@ class Home {
       stopOthersOnPlay: true,
     });
   }
-
-
 
 }
 
