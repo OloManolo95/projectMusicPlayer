@@ -80,13 +80,6 @@ class Home {
       console.log(page);
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
-    //add class "active" to matching links, remove from non=matching
-    for(let link of thisApp.navLinks){
-      console.log(link);
-      link.classList.toggle(
-        classNames.nav.active,
-        link.getAttribute('href') == '#' + pageId);
-    }
   }
 
 
