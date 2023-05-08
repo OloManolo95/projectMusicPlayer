@@ -35,7 +35,6 @@ body {
 
 .button {
   color: $color-main;
-  background-color: $color-button;
   font-weight: $weight-bold;
   border: none;
   cursor: pointer;
@@ -43,6 +42,7 @@ body {
   border-radius: 0.3rem;
 
   &-subscribe {
+    background-color: $color-button;
     font-size: 2rem;
     width: 15rem;
     height: 6rem;
@@ -52,6 +52,7 @@ body {
     font-size: 1rem;
     letter-spacing: 4px;
     font-weight: $weight-semibold;
+    background-color: $color-button;
     text-transform: uppercase;
     height: 46px;
     width: 102px;
@@ -114,4 +115,13 @@ button, input {
 
 .green-audio-player .slider .gap-progress .pin {
   background-color: $color-button;
+}
+
+@media (min-width: 420px) and (max-width: 768px) {
+
+  .song-title {
+
+    font-size: 1rem;
+    letter-spacing: normal;
+  }
 }
