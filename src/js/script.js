@@ -21,6 +21,7 @@ const app = {
         thisApp.initHome();
         thisApp.initSearch();
         thisApp.initDiscover();
+        thisApp.initJoinNow();
       });
   },
 
@@ -31,6 +32,8 @@ const app = {
 
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
 
+    thisApp.button = document.querySelector(select.home.subscribeButton);
+
     const idFromHash = window.location.hash.replace('#/', '');
     //console.log(idFromHash);
 
@@ -38,7 +41,7 @@ const app = {
     console.log(thisApp.pages);
     for(let page of thisApp.pages) {
       if(page.id == idFromHash){
-        console.log(page.id);
+        //console.log(page.id);
         pageMatchingHash = page.id;
         break;
       }
@@ -68,10 +71,12 @@ const app = {
     console.log(thisApp.pages);
     //add class "active" to matching pages, remove from non-matching
     for(let page of thisApp.pages){
+      //console.log(page);
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
     //add class "active" to matching links, remove from non=matching
     for(let link of thisApp.navLinks){
+      //console.log(link);
       link.classList.toggle(
         classNames.nav.active,
         link.getAttribute('href') == '#' + pageId);
@@ -99,7 +104,7 @@ const app = {
   initJoinNow: function(){
     const thisApp = this;
     const joinNowContainer = document.querySelector(select.containerOf.joinNow);
-    thisApp.joinNow = new JoinNow(joinNowContainer);
+    thisApp.joinNow = new JoinNow(joinNowContainer, thisApp.data);
   },
 
   init: function() {
