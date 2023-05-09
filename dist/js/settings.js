@@ -16,7 +16,7 @@ export const select = {
   },
   nav: {
     links: '.navbar-link',
-    discover: '#discover',
+    discover: '#discover-nav',
   },
   home: {
     player: '.page-home .audio-player',
@@ -34,7 +34,8 @@ export const select = {
   },
   discover: {
     song: '.songs',
-    player: '.page-discover .audio-player'
+    player: '.page-discover .audio-player',
+    button: '.page-title',
   }
 };
 

@@ -25,13 +25,14 @@ class Discover {
     thisDiscover.dom.wrapper.innerHTML = generatedHTML;
 
     thisDiscover.dom.song = thisDiscover.dom.wrapper.querySelector(select.discover.song);
-    thisDiscover.dom.link = thisDiscover.dom.wrapper.querySelector(select.nav.discover);
+    thisDiscover.dom.button = thisDiscover.dom.wrapper.querySelector(select.discover.button);
+
   }
 
   initWidgets() {
     const thisDiscover = this;
 
-    new AudioPlayer(this.getRandomSong(), thisDiscover.authors, thisDiscover.dom.song);
+    new AudioPlayer(thisDiscover.getRandomSong(), thisDiscover.authors, thisDiscover.dom.song);
 
     // eslint-disable-next-line
     GreenAudioPlayer.init({
@@ -39,6 +40,12 @@ class Discover {
       stopOthersOnPlay: true,
     });
 
+    thisDiscover.dom.button.addEventListener('click', function(event){
+      event.preventDefault();
+      console.log('click');
+      thisDiscover.dom.song.innerHTML = '';
+      thisDiscover.initWidgets();
+    });
 
   }
 
