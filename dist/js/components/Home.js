@@ -29,7 +29,7 @@ class Home {
 
   initWidgets() {
     const thisHome = this;
-    console.log(thisHome.data);
+    //console.log(thisHome.data);
     for (let song of thisHome.data.songs) {
       //console.log(song);
       new AudioPlayer(song, thisHome.data, thisHome.dom.songsList);
@@ -44,10 +44,10 @@ class Home {
     const idFromHash = window.location.hash.replace('#/', '');
     //console.log(idFromHash);
     let pageMatchingHash = thisHome.pages[0].id;
-    console.log(thisHome.pages);
+    //console.log(thisHome.pages);
     for(let page of thisHome.pages) {
       if(page.id == idFromHash){
-        console.log(page.id);
+        //console.log(page.id);
         pageMatchingHash = page.id;
         break;
       }
@@ -74,10 +74,10 @@ class Home {
 
   activatePage(pageId){
     const thisApp = this;
-    console.log(thisApp.pages);
+    //console.log(thisApp.pages);
     //add class "active" to matching pages, remove from non-matching
     for(let page of thisApp.pages){
-      console.log(page);
+      //console.log(page);
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
   }

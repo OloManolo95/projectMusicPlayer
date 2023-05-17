@@ -25,6 +25,8 @@ const app = {
       });
   },
 
+  urlHooks: {},
+
   initPages: function(){
     const thisApp = this;
 
@@ -38,7 +40,7 @@ const app = {
     //console.log(idFromHash);
 
     let pageMatchingHash = thisApp.pages[0].id;
-    console.log(thisApp.pages);
+    //console.log(thisApp.pages);
     for(let page of thisApp.pages) {
       if(page.id == idFromHash){
         //console.log(page.id);
@@ -68,7 +70,7 @@ const app = {
 
   activatePage: function(pageId){
     const thisApp = this;
-    console.log(thisApp.pages);
+    //console.log(thisApp.pages);
     //add class "active" to matching pages, remove from non-matching
     for(let page of thisApp.pages){
       //console.log(page);
@@ -80,6 +82,10 @@ const app = {
       link.classList.toggle(
         classNames.nav.active,
         link.getAttribute('href') == '#' + pageId);
+    }
+
+    if (thisApp.urlHooks[pageId]) {
+      thisApp.urlHooks[pageId]();
     }
   },
 
@@ -99,6 +105,8 @@ const app = {
     const thisApp = this;
     const discoverContainer = document.querySelector(select.containerOf.discover);
     thisApp.discover = new Discover(discoverContainer, thisApp.data);
+    thisApp.urlHooks['discover'] = thisApp.discover.initWidgets;
+    console.log(thisApp.urlHooks);
   },
 
   initJoinNow: function(){

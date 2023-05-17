@@ -8,11 +8,12 @@ class Discover {
     thisDiscover.songs = data.songs;
     thisDiscover.authors = data.authors;
     thisDiscover.songsLength = thisDiscover.songs.length;
-    //console.log(thisDiscover.songsLength);
+    thisDiscover.randomSong = thisDiscover.getRandomSong();
+    console.log(thisDiscover.randomSong);
 
     thisDiscover.render(element);
-    thisDiscover.getRandomSong();
     thisDiscover.initWidgets();
+    thisDiscover.initActions();
   }
 
   render(wrapper) {
@@ -32,7 +33,7 @@ class Discover {
   initWidgets() {
     const thisDiscover = this;
 
-    new AudioPlayer(thisDiscover.getRandomSong(), thisDiscover.authors, thisDiscover.dom.song);
+    new AudioPlayer(thisDiscover.randomSong, thisDiscover.authors, thisDiscover.dom.song);
 
     // eslint-disable-next-line
     GreenAudioPlayer.init({
@@ -40,21 +41,25 @@ class Discover {
       stopOthersOnPlay: true,
     });
 
+  }
+
+  initActions() {
+    const thisDiscover = this;
+
     thisDiscover.dom.button.addEventListener('click', function(event){
       event.preventDefault();
       console.log('click');
       thisDiscover.dom.song.innerHTML = '';
       thisDiscover.initWidgets();
     });
-
   }
 
   getRandomSong() {
     const thisDiscover = this;
-
+    console.log(thisDiscover.songs);
+    console.log(thisDiscover.songs.length);
     const randomSong = thisDiscover.songs[Math.floor(Math.random() * thisDiscover.songs.length)];
-    //console.log(randomSong);
-
+    console.log(randomSong);
     return randomSong;
   }
 }
